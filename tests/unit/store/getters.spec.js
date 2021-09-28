@@ -1,7 +1,6 @@
 import getters from "../../../src/store/getters";
 
 describe("In Getters", () => {
-  let sort = jest.fn();
   const state = {
     data: [
       {

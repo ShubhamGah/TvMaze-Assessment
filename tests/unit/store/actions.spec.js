@@ -4,7 +4,6 @@ import {
   getSearchedShowService,
   getShowDetailsbyIdService,
 } from "../../../src/service/service.js";
-import axiosObj from "../../../src/service/axiosonfig.js";
 
 const response = {
   data: {

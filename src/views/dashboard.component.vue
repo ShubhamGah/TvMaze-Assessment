@@ -23,8 +23,7 @@ export default {
       try {
         await this.$store.dispatch("getAllShows");
       } catch (error) {
-        console.log(error);
-        throw error;
+        throw error.message;
       }
     },
   },

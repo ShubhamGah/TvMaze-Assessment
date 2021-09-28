@@ -16,9 +16,9 @@
     <!-- top shows container -->
     <div class="top-show-container">
       <div v-if="getTopShows.length > 0">
-        <v-sheet tile color="dark" class="mx-auto mt-4">
+        <v-sheet tile color="dark" class="mx-auto mt-16">
           <v-toolbar-title class="top-shows-title" align="center"
-            >Top Show</v-toolbar-title
+            >Top Five Show</v-toolbar-title
           >
           <v-slide-group class="pa-4 images-slide" center-active show-arrows>
             <v-slide-item v-for="(show, idx) in getTopShows" :key="idx">
@@ -40,24 +40,10 @@
                   width="270"
                   :alt="show.name"
                 >
-                  <!-- <template v-slot:placeholder>
-                    <v-row
-                      class="fill-height ma-0"
-                      align="center"
-                      justify="center"
-                    >
-                      <h2>{{ show.name }}</h2>
-                    </v-row>
-                  </template> -->
                 </v-img>
-                <v-card-text>{{ show.name }}</v-card-text>
-                <v-rating
-                  v-model="show.rating.average"
-                  background-color="red lighten-3"
-                  color="red"
-                  small
-                  value="3"
-                ></v-rating>
+                <v-card-text
+                  ><b>{{ show.name }}</b></v-card-text
+                >
                 <v-card-text>rating-{{ show.rating.average }} /10</v-card-text>
               </v-card>
             </v-slide-item>
@@ -92,14 +78,9 @@
                   :alt="show.name"
                 >
                 </v-img>
-                <v-card-text>{{ show.name }}</v-card-text>
-                <v-rating
-                  v-model="show.rating.average"
-                  background-color="red lighten-3"
-                  color="red"
-                  small
-                  value="3"
-                ></v-rating>
+                <v-card-text
+                  ><b>{{ show.name }}</b></v-card-text
+                >
                 <v-card-text>rating-{{ show.rating.average }} /10</v-card-text>
               </v-card>
             </v-slide-item>
@@ -137,14 +118,9 @@
                   :alt="show.name"
                 >
                 </v-img>
-                <v-card-text>{{ show.name }}</v-card-text>
-                <v-rating
-                  v-model="show.rating.average"
-                  background-color="red lighten-3"
-                  color="red"
-                  small
-                  value="3"
-                ></v-rating>
+                <v-card-text
+                  ><b>{{ show.name }}</b></v-card-text
+                >
                 <v-card-text>rating-{{ show.rating.average }} / 10</v-card-text>
               </v-card>
             </v-slide-item>
@@ -184,9 +160,4 @@ export default {
   },
 };
 </script>
-<style scoped>
-.zoom:hover {
-  transform: scale(1.1);
-  z-index: 99999;
-}
-</style>
+<style scoped></style>

@@ -15,10 +15,10 @@
     </div>
 
     <!-- searched shows container -->
-    <div class="search-shows">
+    <div class="search-shows mt-6">
       <div v-if="searchedResult.length > 0">
         <!-- search shows title -->
-        <v-toolbar-title class="top-shows-title" align="center"
+        <v-toolbar-title class="top-shows-title mt-16" align="center"
           >Searched Show</v-toolbar-title
         >
         <div
@@ -27,7 +27,7 @@
         >
           <v-card
             dard
-            class="m-3 zoom dark"
+            class="m-1 dark"
             v-for="(item, idx) in searchedResult"
             :key="idx"
             @click="getShowDetails(item.show.id)"
@@ -113,11 +113,11 @@ export default {
 </script>
 
 <style scoped>
-.zoom:hover {
-  transform: scale(1.1);
-  z-index: 99999;
-}
 img.loaderGIF {
-  width: 8rem;
+  width: 14rem;
+  margin-top: 6rem;
+}
+.search-items {
+  justify-content: center !important;
 }
 </style>

@@ -23,14 +23,14 @@
         solo
         label="Search Show"
       ></v-text-field>
-      <v-btn
+      <!-- <v-btn
         id="search-button"
         :disabled="!SearchString"
         @click="getSearchResults"
         icon
       >
         <v-icon>mdi-magnify</v-icon>
-      </v-btn>
+      </v-btn> -->
     </v-app-bar>
   </div>
 </template>
@@ -49,7 +49,6 @@ export default {
   watch: {
     SearchString() {
       this.SearchString = this.SearchString.replace(/\s/g, " ");
-      console.log("search input changeed", this.SearchString);
       this.getSearchResults();
     },
   },

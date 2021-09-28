@@ -1,8 +1,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Dashboard from "../views/dashboard.component.vue";
-import SearchedShow from "../components/searchedShow.component.vue";
-import ShowDetails from "../components/showDetails.component.vue";
+import SearchedShow from "../views/searchedShow.component.vue";
+import ShowDetails from "../views/showsDetails.component.vue";
 import PageNotFound from "../components/pageNotFound.component.vue";
 Vue.use(VueRouter);
 
