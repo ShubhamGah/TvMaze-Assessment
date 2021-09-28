@@ -41,10 +41,12 @@
                   :alt="show.name"
                 >
                 </v-img>
-                <v-card-text
+                <v-card-text class="show-name"
                   ><b>{{ show.name }}</b></v-card-text
                 >
-                <v-card-text>rating-{{ show.rating.average }} /10</v-card-text>
+                <v-card-text class="show-rating"
+                  >rating-{{ show.rating.average }} /10</v-card-text
+                >
               </v-card>
             </v-slide-item>
           </v-slide-group>
@@ -54,7 +56,7 @@
     <!-- comedy show container -->
     <div class="comedy-show-container">
       <div v-if="getComedyShows.length > 0">
-        <v-sheet tile color="dark" class="mx-auto mt-4">
+        <v-sheet tile color="dark" class="mx-auto">
           <v-toolbar-title class="comedy-show-title" align="center"
             >Comedy Show</v-toolbar-title
           >
@@ -78,10 +80,12 @@
                   :alt="show.name"
                 >
                 </v-img>
-                <v-card-text
+                <v-card-text class="show-name"
                   ><b>{{ show.name }}</b></v-card-text
                 >
-                <v-card-text>rating-{{ show.rating.average }} /10</v-card-text>
+                <v-card-text class="show-rating">
+                  rating-{{ show.rating.average }} /10</v-card-text
+                >
               </v-card>
             </v-slide-item>
           </v-slide-group>
@@ -91,11 +95,15 @@
     <!-- Science Fiction show container -->
     <div class="science-fiction-show-container">
       <div v-if="getScienceFictionshows.length > 0">
-        <v-sheet tile color="dark" class="mx-auto mt-4">
+        <v-sheet tile color="dark" class="mx-auto">
           <v-toolbar-title class="science-fictions-show-title" align="center"
             >Science Fiction Show</v-toolbar-title
           >
-          <v-slide-group class="pa-4" center-active show-arrows>
+          <v-slide-group
+            class="pa-1 card-slider-images pb-9"
+            center-active
+            show-arrows
+          >
             <v-slide-item
               v-for="(show, idx) in getScienceFictionshows"
               :key="idx"
@@ -118,10 +126,12 @@
                   :alt="show.name"
                 >
                 </v-img>
-                <v-card-text
+                <v-card-text class="show-name"
                   ><b>{{ show.name }}</b></v-card-text
                 >
-                <v-card-text>rating-{{ show.rating.average }} / 10</v-card-text>
+                <v-card-text class="show-rating"
+                  >rating-{{ show.rating.average }} / 10</v-card-text
+                >
               </v-card>
             </v-slide-item>
           </v-slide-group>
@@ -160,4 +170,11 @@ export default {
   },
 };
 </script>
-<style scoped></style>
+<style scoped>
+.show-rating {
+  padding: 1px;
+}
+.show-name {
+  padding: 1px;
+}
+</style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="searched-show-container">
+  <div class="searched-show-container m-4">
     <!-- content loading loader -->
     <div v-if="contentLoading">
       <div class="loading-gif" align="center">
@@ -7,15 +7,20 @@
       </div>
     </div>
     <!-- content error -->
-    <div v-if="contentError">
+    <div class="m-5" v-if="searchedResult.length == 0">
       <div class="shows-error-message" align="center">
-        <h3>Sorry some error occured!</h3>
+        <h4>Please search with other shows</h4>
+      </div>
+    </div>
+    <!-- content error -->
+    <div class="m-5" v-if="contentError">
+      <div class="shows-error-message" align="center">
         <h4>Please try again after some time</h4>
       </div>
     </div>
 
     <!-- searched shows container -->
-    <div class="search-shows mt-6">
+    <div class="search-shows mt-6 pb-9">
       <div v-if="searchedResult.length > 0">
         <!-- search shows title -->
         <v-toolbar-title class="top-shows-title mt-16" align="center"
@@ -51,7 +56,7 @@
       </div>
     </div>
     <!-- Item Not Found -->
-    <div v-if="searchedResult.length == 0">
+    <div v-if="searchedResult.length < 0">
       <div class="no-data-found" align="center">
         <h4>Try searching for something else</h4>
       </div>
@@ -86,6 +91,7 @@ export default {
   // beforeMount() {
   //   this.addparams();
   // },
+
   methods: {
     // addparams() {
     //   this.searchedString = this.$route.params.showData;
@@ -95,11 +101,14 @@ export default {
     },
     async getSearchedShow() {
       this.searchedString = this.$route.params.showData;
+
       this.contentLoading = true;
       this.contentError = false;
+      console.log("searched string", this.searchedString);
       try {
         if (this.searchedString.trim() !== "") {
           await this.$store.dispatch("getSearchedShows", this.searchedString);
+          console.log("searched rese", this.searchedResult.length);
         }
       } catch (error) {
         this.contentError = true;

@@ -2,7 +2,7 @@ import { shallowMount, createLocalVue } from "@vue/test-utils";
 import Header from "../../../src/components/header.component.vue";
 import Vuetify from "vuetify";
 import VueRouter from "vue-router";
-import { routes } from "../../../src/router/index.js";
+// import router from "../../../src/router/index.js";
 import Vuex from "vuex";
 
 describe("In Header Component", () => {
@@ -66,24 +66,23 @@ describe("In Header Component", () => {
   const state = {
     searchedResult: [data],
   };
-  const $route = {
-    path: "/some/path",
-  };
+
   beforeEach(() => {
     const localVue = createLocalVue();
     localVue.use(VueRouter);
     localVue.use(Vuetify);
     localVue.use(Vuex);
 
-    const route = new VueRouter({ routes });
+    // const route = new VueRouter({ router });
 
     wrapper = shallowMount(Header, {
       localVue,
-      route,
-      state,
       mocks: {
-        $route,
+        $router: {
+          push: jest.fn(),
+        },
       },
+      state,
       data() {
         return {
           SearchString: "The Wire",
@@ -99,11 +98,5 @@ describe("In Header Component", () => {
   });
   it("should render the correct markup", () => {
     expect(wrapper.html()).toContain('<div class="header-container">');
-  });
-
-  it("should check getSearchResults is called when button clicked", async () => {
-    const mockMethod = jest.spyOn(Header.methods, "getSearchResults");
-    await shallowMount(Header).find("#search-button").trigger("click");
-    expect(mockMethod).toHaveBeenCalled();
   });
 });

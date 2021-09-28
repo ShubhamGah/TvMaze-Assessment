@@ -1,9 +1,21 @@
 <template>
   <div class="show-details-container">
+    <!-- show-image-container -->
+
+    <div v-if="showDetails" class="show-image-container mt-16 col-md-6">
+      <v-col class="show-image col-12">
+        <v-img
+          class="white--text show-image"
+          :src="showDetails.image.original"
+          aspect-ratio="1"
+        >
+        </v-img>
+      </v-col>
+    </div>
     <!-- show-details-container -->
 
-    <div class="show-details-container col-12 mt-12">
-      <v-col>
+    <div v-if="showDetails" class="show-details-container col-md-6 mt-16">
+      <div class="show-details mt-2">
         <v-card class="pa-2 text-center">
           <h2>{{ showDetails.name }}</h2>
           <h4>{{ showDetails.language }} | {{ showDetails.type }}</h4>
@@ -15,40 +27,27 @@
             </span>
           </h5>
           <h5>Runtime : {{ showDetails.runtime }} mins</h5>
-          <h5 v-if="showDetails.rating.average">
+          <h5 v-if="showDetails.rating">
             Rating : {{ showDetails.rating.average }}/10
           </h5>
         </v-card>
-      </v-col>
-    </div>
-
-    <!-- show-image-container -->
-
-    <div class="show-image-container col-5">
-      <v-col class="show-image col-9 justify-space-around d-flex flex-wrap">
-        <v-img
-          class="white--text"
-          :src="showDetails.image.original"
-          aspect-ratio="1"
-        >
-        </v-img>
-      </v-col>
+      </div>
     </div>
 
     <!-- show-cast-container -->
 
-    <div class="show-cast-container">
+    <div class="show-cast-container col-12" v-if="getCastDetaiils.length > 0">
       <v-toolbar-title class="cast-title" align="center">Cast</v-toolbar-title>
+      <hr />
       <div
         class="search-items justify-space-around d-flex flex-wrap"
         color="dark"
       >
         <v-card
           dard
-          class="m-1 dark cast-images-card"
+          class="m-1 cast-images-card"
           v-for="(item, idx) in getCastDetaiils"
           :key="idx"
-          hover
           elevation="20"
           max-height="500px"
           max-width="500px"
@@ -58,8 +57,6 @@
             class="white--text align-end cast-persons-images"
             :src="item.person.image.medium"
             aspect-ratio="1"
-            height="120"
-            width="100"
             :alt="item.person.name"
           >
           </v-img>
@@ -69,7 +66,7 @@
     </div>
 
     <!-- show-summary-details -->
-    <div class="show-summary-container col-12 mt-12">
+    <div class="show-summary-container col-12">
       <v-card class="pa-2">
         <h3 class="text">
           <u>Summary</u>
@@ -135,6 +132,7 @@ export default {
       this.contentError = false;
       try {
         await this.$store.dispatch("getCastDetails", id);
+        console.log(this.getCastDetaiils);
       } catch (error) {
         this.contentLoading = false;
         this.contentError = true;
@@ -146,7 +144,27 @@ export default {
 };
 </script>
 <style scoped>
-.show-image-container {
+/* .show-details-container.col-6 {
+    float: right;
+  } */
+
+.show-cast-container.col-12 {
   float: left;
+}
+.show-summary-container.col-12 {
+  float: left;
+}
+.show-image.col-12 {
+  width: 30rem;
+  padding-left: 1.6rem;
+}
+.show-details-container.col-md-6 {
+  float: right;
+}
+.show-image-container.mt-16.col-md-6 {
+  display: inline-block;
+}
+.cast-images-card {
+  height: 14rem;
 }
 </style>

@@ -8,7 +8,7 @@
           <v-img
             name="tvm-image"
             alt="Vuetify Logo"
-            class="shrink mr-2"
+            class="shrink mr-2 logo-img"
             contain
             src="../assets/tvm-header-logo.png"
             transition="scale-transition"
@@ -20,12 +20,19 @@
       <v-spacer></v-spacer>
       <!-- search input field -->
       <v-text-field
-        @keyup.enter="getSearchResults"
         v-model="SearchString"
-        class="mt-7"
+        class="mt-7 search-input"
         solo
         label="Search Show"
       ></v-text-field>
+      <v-btn
+        id="search-button"
+        :disabled="!SearchString"
+        @click="getSearchResults"
+        icon
+      >
+        <v-icon>mdi-magnify</v-icon>
+      </v-btn>
     </v-app-bar>
   </div>
 </template>
@@ -41,18 +48,21 @@ export default {
   computed: {
     ...mapState(["searchedResult"]),
   },
-  watch: {
-    SearchString() {
-      this.SearchString = this.SearchString.replace(/\s/g, " ");
-      this.getSearchResults();
-    },
+  // watch: {
+  //   SearchString() {
+  //     this.SearchString = this.SearchString.replace(/\s/g, " ");
+  //     this.getSearchResults();
+  //   },
+  // },
+  mounted() {
+    this.getSearchResults();
   },
-
   methods: {
     getSearchResults() {
       if (this.SearchString.trim() !== "") {
         this.$router.push("/show/" + this.SearchString);
       }
+      this.SearchString = "";
     },
   },
 };
