@@ -3,7 +3,7 @@ import Vuetify from "vuetify";
 import VueRouter from "vue-router";
 import { routes } from "@/router/index";
 import Vuex from "vuex";
-import ShowDetails from "../../../src/components/showDetails.component.vue";
+import ShowDetails from "../../../src/views/showsDetails.component.vue";
 
 describe("In Shoe Details component", () => {
   let wrapper;

@@ -1,8 +1,10 @@
 <template>
   <div class="header-container">
+    <!-- header main container -->
     <v-app-bar app color="dark" name="app=header" dark>
       <div class="d-flex align-center">
         <router-link to="/">
+          <!-- tvm image -->
           <v-img
             name="tvm-image"
             alt="Vuetify Logo"
@@ -16,6 +18,7 @@
         <v-toolbar-title class="title">Tv Show</v-toolbar-title>
       </div>
       <v-spacer></v-spacer>
+      <!-- search input field -->
       <v-text-field
         @keyup.enter="getSearchResults"
         v-model="SearchString"
@@ -23,14 +26,6 @@
         solo
         label="Search Show"
       ></v-text-field>
-      <!-- <v-btn
-        id="search-button"
-        :disabled="!SearchString"
-        @click="getSearchResults"
-        icon
-      >
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn> -->
     </v-app-bar>
   </div>
 </template>

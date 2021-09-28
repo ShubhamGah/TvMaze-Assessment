@@ -85,29 +85,35 @@ describe("In Actions ", () => {
     });
   });
 
-  describe(" checking getSearchedShowService response ", async () => {
-    const context = {
-      commit: jest.fn(),
-    };
-    getSearchedShowService.mockImplementation(() => Promise.resolve(response));
-    await actions.getSearchedShows(context, "The wire");
-    expect(context.commit).toHaveBeenCalledWith(
-      "SET_SEARCHED_RESULT",
-      response.data
-    );
+  describe(" checking getSearchedShowService response ", () => {
+    it("check service response", async () => {
+      const context = {
+        commit: jest.fn(),
+      };
+      getSearchedShowService.mockImplementation(() =>
+        Promise.resolve(response)
+      );
+      await actions.getSearchedShows(context, "The wire");
+      expect(context.commit).toHaveBeenCalledWith(
+        "SET_SEARCHED_RESULT",
+        response.data
+      );
+    });
   });
 
-  describe("checking getShowDetailsbyIdService resolved responce", async () => {
-    const context = {
-      commit: jest.fn(),
-    };
-    getShowDetailsbyIdService.mockImplementation(() =>
-      Promise.resolve(response)
-    );
-    await actions.getShowDetailsbyId(context, "169");
-    expect(context.commit).toHaveBeenCalledWith(
-      "SET_SHOW_DETAILS",
-      response.data
-    );
+  describe("checking getShowDetailsbyIdService resolved responce", () => {
+    it("check response", async () => {
+      const context = {
+        commit: jest.fn(),
+      };
+      getShowDetailsbyIdService.mockImplementation(() =>
+        Promise.resolve(response)
+      );
+      await actions.getShowDetailsbyId(context, "169");
+      expect(context.commit).toHaveBeenCalledWith(
+        "SET_SHOW_DETAILS",
+        response.data
+      );
+    });
   });
 });

@@ -1,15 +1,14 @@
 import getters from "../../../src/store/getters";
 
 describe("In Getters", () => {
-  const state = {
-    data: [
+  let data = [
       {
         id: 1,
         url: "http://www.tvmaze.com/shows/1/under-the-dome",
         name: "Under the Dome",
         type: "Scripted",
         language: "English",
-        genres: ["Drama", "Science-Fiction", "Thriller"],
+        genres: ["Drama", "Science-Fiction", "Thriller", "Comedy"],
         status: "Ended",
         runtime: 60,
         premiered: "2013-06-24",
@@ -56,10 +55,19 @@ describe("In Getters", () => {
         },
       },
     ],
-  };
+    state = {
+      allShows: [data],
+      searchedResult: [],
+      showDetails: {},
+      castDetails: [data],
+    };
 
-  it("show return top show", () => {
-    const topShows = getters.getTopShows(state);
-    expect(topShows.sort).toContain([{ id: 1, name: "Under the Dome" }]);
+  it("should call top-shows", () => {
+    const result = getters.getTopShows(state);
+    expect(result).toEqual(state.allShows);
+  });
+  it("should call getCastDetaiils", () => {
+    const result = getters.getCastDetaiils(state);
+    expect(result).toEqual(state.castDetails);
   });
 });

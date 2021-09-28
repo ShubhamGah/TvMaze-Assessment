@@ -3,7 +3,7 @@ import Vuetify from "vuetify";
 import VueRouter from "vue-router";
 import { routes } from "@/router/index";
 import Vuex from "vuex";
-import SearchedShow from "../../../src/components/searchedShow.component.vue";
+import SearchedShow from "../../../src/views/searchedShow.component.vue";
 
 describe("Searched Show Component", () => {
   let wrapper;
@@ -104,9 +104,5 @@ describe("Searched Show Component", () => {
 
   it("is a vue instance", () => {
     expect(wrapper.isVueInstance).toBeTruthy();
-  });
-  it("getSearchedShows action should be called on calling getSearchedShows method", () => {
-    wrapper.vm.getSearchedShows();
-    expect(actions.getSearchedShows).toHaveBeenCalled();
   });
 });

@@ -1,26 +1,15 @@
 export default {
   // top shows basis on their ratings
   getTopShows(state) {
-    let sampleShows;
-    sampleShows = state.allShows
-      .sort((a, b) => b.rating.average - a.rating.average)
-      .slice(0, 5);
-    return sampleShows;
+    return state.allShows.slice(0, 5);
   },
-  // top five shows
-  // getTopFiveShows(state) {
-  //   let sampleShows;
-  //   sampleShows = state.allShows
-  //     .sort((a, b) => b.rating.average - a.rating.average)
-  //     .slice(0, 5);
-  //   return sampleShows;
-  // },
-  // returns comedy shows
+
   getComedyShows(state) {
     let sampleDramaShows;
     sampleDramaShows = state.allShows
       .filter((element) => element.genres.includes("Comedy"))
       .slice(0, 30);
+    console.log("getters", sampleDramaShows);
     return sampleDramaShows;
   },
   // returns science friction shows

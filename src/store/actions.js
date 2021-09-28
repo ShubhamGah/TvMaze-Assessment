@@ -10,6 +10,7 @@ export default {
   async getAllShows(context) {
     try {
       const response = await getAllShowsService();
+      console.log("all shows data", response.data);
       context.commit("SET_ALL_SHOWS", response.data);
     } catch (error) {
       throw error.message;

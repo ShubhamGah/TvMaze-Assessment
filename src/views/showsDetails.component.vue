@@ -148,6 +148,5 @@ export default {
 <style scoped>
 .show-image-container {
   float: left;
-  height: 31rem;
 }
 </style>

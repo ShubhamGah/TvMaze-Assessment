@@ -89,10 +89,10 @@
       </div>
     </div>
     <!-- Science Fiction show container -->
-    <div class="sports-show-container">
+    <div class="science-fiction-show-container">
       <div v-if="getScienceFictionshows.length > 0">
         <v-sheet tile color="dark" class="mx-auto mt-4">
-          <v-toolbar-title class="sports-show-title" align="center"
+          <v-toolbar-title class="science-fictions-show-title" align="center"
             >Science Fiction Show</v-toolbar-title
           >
           <v-slide-group class="pa-4" center-active show-arrows>
