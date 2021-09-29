@@ -29,6 +29,7 @@ describe("Searched Show Component", () => {
       localVue,
       store,
       router,
+      stubs: ["v-toolbar-title"],
       vuetify,
       data() {
         return {
@@ -47,7 +48,7 @@ describe("Searched Show Component", () => {
   });
   it("should render the correct html", () => {
     expect(wrapper.html()).toContain(
-      '<div class="searched-show-container m-4">'
+      '<div class="searched-show-container col-12">'
     );
   });
   it("should check getSearchedShows is defined", async () => {
