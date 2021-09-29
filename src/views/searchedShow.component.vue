@@ -15,7 +15,7 @@
     <!-- content error -->
     <div class="m-5" v-if="contentError">
       <div class="shows-error-message" align="center">
-        <h4>Please try again after some time</h4>
+        <h4>Error found, plasae check with TV maze API team</h4>
       </div>
     </div>
 
@@ -32,7 +32,8 @@
         >
           <v-card
             dard
-            class="m-1 dark"
+            id="shows-card"
+            class="m-1 dark show-item-card"
             v-for="(item, idx) in searchedResult"
             :key="idx"
             @click="getShowDetails(item.show.id)"
@@ -77,25 +78,17 @@ export default {
   computed: {
     ...mapState(["searchedResult"]),
   },
-
   created() {
     this.$watch(
       () => this.$route.params.showData,
       () => {
-        this.getSearchedShow();
+        (this.searchedString = this.$route.params.showData),
+          this.getSearchedShow();
       }
     );
     this.getSearchedShow();
   },
-
-  // beforeMount() {
-  //   this.addparams();
-  // },
-
   methods: {
-    // addparams() {
-    //   this.searchedString = this.$route.params.showData;
-    // },
     getShowDetails(id) {
       this.$router.push({ name: "ShowDetails", params: { id } });
     },
@@ -104,11 +97,9 @@ export default {
 
       this.contentLoading = true;
       this.contentError = false;
-      console.log("searched string", this.searchedString);
       try {
         if (this.searchedString.trim() !== "") {
           await this.$store.dispatch("getSearchedShows", this.searchedString);
-          console.log("searched rese", this.searchedResult.length);
         }
       } catch (error) {
         this.contentError = true;
@@ -123,7 +114,6 @@ export default {
 
 <style scoped>
 img.loaderGIF {
-  width: 14rem;
   margin-top: 6rem;
 }
 .search-items {

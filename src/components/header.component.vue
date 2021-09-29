@@ -27,8 +27,9 @@
       ></v-text-field>
       <v-btn
         id="search-button"
+        class="search-button-btn"
         :disabled="!SearchString"
-        @click="getSearchResults"
+        @click="getSearchResults()"
         icon
       >
         <v-icon>mdi-magnify</v-icon>

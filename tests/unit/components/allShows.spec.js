@@ -2,6 +2,7 @@ import { shallowMount, createLocalVue } from "@vue/test-utils";
 import Vuetify from "vuetify";
 import VueRouter from "vue-router";
 import Vuex from "vuex";
+import router from "../../../src/router/index";
 import AllShows from "../../../src/components/allshows.component.vue";
 describe("all shows", () => {
   let wrapper;
@@ -87,6 +88,7 @@ describe("all shows", () => {
       localVue,
       Vuetify,
       store,
+      router,
       propsData: {
         allShowsDetails: {
           id: "1",
@@ -112,8 +114,9 @@ describe("all shows", () => {
     expect(wrapper.html()).toContain('<div class="shows-container">');
   });
 
-  it("click does something", async () => {
-    await wrapper.find("v-img").trigger("click");
-    expect(wrapper.vm.getShowDetails).toHaveBeenCalled();
+  it("should click on imge and call getShowDetails", async () => {
+    const spy = jest.spyOn(wrapper.vm, "getShowDetails");
+    await wrapper.find(".show-image").trigger("click");
+    expect(spy).toHaveBeenCalled();
   });
 });

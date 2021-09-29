@@ -33,10 +33,22 @@
         </v-card>
       </div>
     </div>
+    <!-- show-summary-details -->
+    <div class="show-summary-container col-12">
+      <v-card class="pa-2">
+        <h3 class="text">
+          <u>Summary</u>
+        </h3>
+        <p class="pa-4" v-html="showDetails.summary"></p>
+      </v-card>
+    </div>
 
     <!-- show-cast-container -->
 
-    <div class="show-cast-container col-12" v-if="getCastDetaiils.length > 0">
+    <div
+      class="show-cast-container col-12 pb-8"
+      v-if="getCastDetaiils.length > 0"
+    >
       <v-toolbar-title class="cast-title" align="center">Cast</v-toolbar-title>
       <hr />
       <div
@@ -49,8 +61,6 @@
           v-for="(item, idx) in getCastDetaiils"
           :key="idx"
           elevation="20"
-          max-height="500px"
-          max-width="500px"
         >
           <v-img
             lazy-src="../assets/logo.png"
@@ -65,15 +75,6 @@
       </div>
     </div>
 
-    <!-- show-summary-details -->
-    <div class="show-summary-container col-12">
-      <v-card class="pa-2">
-        <h3 class="text">
-          <u>Summary</u>
-        </h3>
-        <p class="pa-4" v-html="showDetails.summary"></p>
-      </v-card>
-    </div>
     <!-- loading content loader -->
     <div v-if="contentLoading">
       <div class="loading-gif" align="center">
@@ -132,7 +133,6 @@ export default {
       this.contentError = false;
       try {
         await this.$store.dispatch("getCastDetails", id);
-        console.log(this.getCastDetaiils);
       } catch (error) {
         this.contentLoading = false;
         this.contentError = true;

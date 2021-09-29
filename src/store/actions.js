@@ -10,7 +10,6 @@ export default {
   async getAllShows(context) {
     try {
       const response = await getAllShowsService();
-      console.log("all shows data", response.data);
       context.commit("SET_ALL_SHOWS", response.data);
     } catch (error) {
       throw error.message;
@@ -29,7 +28,6 @@ export default {
   async getShowDetailsbyId(context, showId) {
     try {
       const response = await getShowDetailsbyIdService(showId);
-      console.log(response.data);
       context.commit("SET_SHOW_DETAILS", response.data);
     } catch (error) {
       throw error.message;
@@ -40,7 +38,6 @@ export default {
   async getCastDetails(context, showId) {
     try {
       const response = await getShowCastDetailsService(showId);
-      console.log("cast", response.data);
       context.commit("SET_CAST_DETAILS", response.data);
     } catch (error) {
       throw error.message;

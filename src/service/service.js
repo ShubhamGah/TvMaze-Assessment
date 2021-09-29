@@ -7,7 +7,7 @@ function getAllShowsService() {
 
 // service returns searched shows
 function getSearchedShowService(SearchString) {
-  return axiosObj.get(`/search/shows?q=${SearchString}`);
+  return axiosObj.get(`/search/shows?q=:${SearchString}`);
 }
 
 //service returns shows by ID

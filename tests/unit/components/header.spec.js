@@ -2,7 +2,7 @@ import { shallowMount, createLocalVue } from "@vue/test-utils";
 import Header from "../../../src/components/header.component.vue";
 import Vuetify from "vuetify";
 import VueRouter from "vue-router";
-// import router from "../../../src/router/index.js";
+import router from "../../../src/router/index.js";
 import Vuex from "vuex";
 
 describe("In Header Component", () => {
@@ -77,12 +77,8 @@ describe("In Header Component", () => {
 
     wrapper = shallowMount(Header, {
       localVue,
-      mocks: {
-        $router: {
-          push: jest.fn(),
-        },
-      },
       state,
+      router,
       data() {
         return {
           SearchString: "The Wire",
@@ -98,5 +94,13 @@ describe("In Header Component", () => {
   });
   it("should render the correct markup", () => {
     expect(wrapper.html()).toContain('<div class="header-container">');
+  });
+  it("should click on imge and call getSearchResults", async () => {
+    const savebutton = wrapper.find("#search-button");
+    const spy = jest.spyOn(wrapper.vm, "getSearchResults");
+    savebutton.trigger("click");
+    await wrapper.vm.$nextTick();
+    expect(spy).toHaveBeenCalled();
+    // jest.restoreAllMocks();
   });
 });

@@ -97,7 +97,7 @@ describe("In Shoe Details component", () => {
       store,
       data() {
         return {
-          id: Number,
+          id: "123",
           contentLoading: false,
           contentError: false,
         };

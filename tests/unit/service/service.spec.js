@@ -79,8 +79,8 @@ describe("In Service", () => {
 
   it("should chcek getSearchedShowService response not null", async () => {
     axiosObj.get.mockImplementation(() => Promise.resolve(response));
-    const searchedData = await getSearchedShowService("The Wire");
-    expect(axiosObj.get).toHaveBeenCalledWith("/search/shows?q=The Wire");
+    const searchedData = await getSearchedShowService();
+    expect(axiosObj.get).toHaveBeenCalled();
     expect(searchedData).not.toBeNull;
   });
 

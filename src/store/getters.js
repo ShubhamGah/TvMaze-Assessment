@@ -9,7 +9,6 @@ export default {
     sampleDramaShows = state.allShows
       .filter((element) => element.genres.includes("Comedy"))
       .slice(0, 30);
-    console.log("getters", sampleDramaShows);
     return sampleDramaShows;
   },
   // returns science friction shows
