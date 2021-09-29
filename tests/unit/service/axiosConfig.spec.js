@@ -8,7 +8,6 @@ describe("In clientApi", () => {
   it("clientApi to be defined", () => {
     expect(axiosObj).toBeDefined();
   });
-
   it("axios.create sets the baseUrl", () => {
     const expected = axios.create({
       baseURL,

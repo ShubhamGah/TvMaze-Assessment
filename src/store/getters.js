@@ -1,7 +1,9 @@
 export default {
   // top shows basis on their ratings
   getTopShows(state) {
-    return state.allShows.slice(0, 5);
+    return state.allShows
+      .sort((a, b) => b.rating.average - a.rating.average)
+      .slice(0, 5);
   },
 
   getComedyShows(state) {

@@ -22,9 +22,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">4.55% </span>
+                <span class="strong">4.76% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/22</span>
+                <span class='fraction'>1/21</span>
             </div>
         
             
@@ -43,9 +43,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">4.55% </span>
+                <span class="strong">4.76% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/22</span>
+                <span class='fraction'>1/21</span>
             </div>
         
             
@@ -214,25 +214,7 @@
 <a name='L156'></a><a href='#L156'>156</a>
 <a name='L157'></a><a href='#L157'>157</a>
 <a name='L158'></a><a href='#L158'>158</a>
-<a name='L159'></a><a href='#L159'>159</a>
-<a name='L160'></a><a href='#L160'>160</a>
-<a name='L161'></a><a href='#L161'>161</a>
-<a name='L162'></a><a href='#L162'>162</a>
-<a name='L163'></a><a href='#L163'>163</a>
-<a name='L164'></a><a href='#L164'>164</a>
-<a name='L165'></a><a href='#L165'>165</a>
-<a name='L166'></a><a href='#L166'>166</a>
-<a name='L167'></a><a href='#L167'>167</a>
-<a name='L168'></a><a href='#L168'>168</a>
-<a name='L169'></a><a href='#L169'>169</a>
-<a name='L170'></a><a href='#L170'>170</a>
-<a name='L171'></a><a href='#L171'>171</a>
-<a name='L172'></a><a href='#L172'>172</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L159'></a><a href='#L159'>159</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -336,9 +318,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -362,17 +341,12 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -401,7 +375,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
   &lt;div class="show-details-container"&gt;
     &lt;!-- show-image-container --&gt;
-&nbsp;
     &lt;div v-if="showDetails" class="show-image-container mt-16 col-md-6"&gt;
       &lt;v-col class="show-image col-12"&gt;
         &lt;v-img
@@ -413,7 +386,6 @@
       &lt;/v-col&gt;
     &lt;/div&gt;
     &lt;!-- show-details-container --&gt;
-&nbsp;
     &lt;div v-if="showDetails" class="show-details-container col-md-6 mt-16"&gt;
       &lt;div class="show-details mt-2"&gt;
         &lt;v-card class="pa-2 text-center"&gt;
@@ -442,9 +414,7 @@
         &lt;p class="pa-4" v-html="showDetails.summary"&gt;&lt;/p&gt;
       &lt;/v-card&gt;
     &lt;/div&gt;
-&nbsp;
     &lt;!-- show-cast-container --&gt;
-&nbsp;
     &lt;div
       class="show-cast-container col-12 pb-8"
       v-if="getCastDetaiils.length &gt; 0"
@@ -474,7 +444,6 @@
         &lt;/v-card&gt;
       &lt;/div&gt;
     &lt;/div&gt;
-&nbsp;
     &lt;!-- loading content loader --&gt;
     &lt;div v-if="contentLoading"&gt;
       &lt;div class="loading-gif" align="center"&gt;
@@ -506,9 +475,6 @@ export default {
     ...mapState(["showDetails"]),
     ...mapGetters(["getCastDetaiils"]),
   },
-  // created() {
-  //   this.getShowDetailsbyId(this.id);
-  // },
 <span class="fstat-no" title="function not covered" >  mounted() {</span>
 <span class="cstat-no" title="statement not covered" >    if (this.showDetails) {</span>
 <span class="cstat-no" title="statement not covered" >      this.getShowDetailsbyId(this.id);</span>
@@ -533,7 +499,6 @@ export default {
 <span class="cstat-no" title="statement not covered" >      this.contentError = false;</span>
 <span class="cstat-no" title="statement not covered" >      try {</span>
 <span class="cstat-no" title="statement not covered" >        await this.$store.dispatch("getCastDetails", id);</span>
-<span class="cstat-no" title="statement not covered" >        console.log(this.getCastDetaiils);</span>
       } catch (error) {
 <span class="cstat-no" title="statement not covered" >        this.contentLoading = false;</span>
 <span class="cstat-no" title="statement not covered" >        this.contentError = true;</span>
@@ -545,10 +510,6 @@ export default {
 };
 &lt;/script&gt;
 &lt;style scoped&gt;
-/* .show-details-container.col-6 {
-    float: right;
-  } */
-&nbsp;
 .show-cast-container.col-12 {
   float: left;
 }
@@ -576,7 +537,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Sep 29 2021 13:36:27 GMT+0530 (India Standard Time)
+                at Wed Sep 29 2021 17:51:28 GMT+0530 (India Standard Time)
             </div>
         </div>
         <script src="..\prettify.js"></script>

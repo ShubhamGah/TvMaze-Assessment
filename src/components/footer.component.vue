@@ -2,7 +2,9 @@
   <div class="footer-container">
     <b-container fluid class="footer">
       Copyright &copy; —
-      <a href="https://www.tvmaze.com/api"><strong>TVmaze.com</strong></a>
+      <a class="footer-tv-maze" href="https://www.tvmaze.com/api"
+        ><strong>TVmaze.com</strong></a
+      >
     </b-container>
   </div>
 </template>
@@ -16,7 +18,7 @@ export default {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 30px; /* Height of the footer */
+  height: 30px;
   background: #475b59;
   color: #ffff;
 }

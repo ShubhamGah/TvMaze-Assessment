@@ -66,23 +66,19 @@ describe("In DashBoard Component", () => {
   const actions = {
     getAllShows: jest.fn(),
   };
-
   beforeEach(() => {
     const localVue = createLocalVue();
     localVue.use(VueRouter);
     localVue.use(Vuex);
-
     store = new Vuex.Store({
       state,
       actions,
     });
-
     wrapper = shallowMount(Dashboard, {
       localVue,
       store,
     });
   });
-
   afterEach(() => {
     wrapper.destroy();
   });
@@ -91,5 +87,8 @@ describe("In DashBoard Component", () => {
   });
   it("should render the correct markup", () => {
     expect(wrapper.html()).toContain('<div class="dashboard-container">');
+  });
+  it("should check getAllShows is defined", async () => {
+    expect(wrapper.vm.getAllShows).toBeDefined;
   });
 });

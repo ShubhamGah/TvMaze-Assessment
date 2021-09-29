@@ -76,14 +76,12 @@ describe("In Service", () => {
     expect(axiosObj.get).toHaveBeenCalledWith("/shows");
     expect(allShows).not.toBeNull;
   });
-
   it("should chcek getSearchedShowService response not null", async () => {
     axiosObj.get.mockImplementation(() => Promise.resolve(response));
     const searchedData = await getSearchedShowService();
     expect(axiosObj.get).toHaveBeenCalled();
     expect(searchedData).not.toBeNull;
   });
-
   it("should chcek getShowDetailsbyIdService response not null", async () => {
     axiosObj.get.mockImplementation(() => Promise.resolve(response));
     const detailsByID = await getShowDetailsbyIdService("169");

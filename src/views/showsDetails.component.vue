@@ -1,7 +1,6 @@
 <template>
   <div class="show-details-container">
     <!-- show-image-container -->
-
     <div v-if="showDetails" class="show-image-container mt-16 col-md-6">
       <v-col class="show-image col-12">
         <v-img
@@ -13,7 +12,6 @@
       </v-col>
     </div>
     <!-- show-details-container -->
-
     <div v-if="showDetails" class="show-details-container col-md-6 mt-16">
       <div class="show-details mt-2">
         <v-card class="pa-2 text-center">
@@ -42,9 +40,7 @@
         <p class="pa-4" v-html="showDetails.summary"></p>
       </v-card>
     </div>
-
     <!-- show-cast-container -->
-
     <div
       class="show-cast-container col-12 pb-8"
       v-if="getCastDetaiils.length > 0"
@@ -74,7 +70,6 @@
         </v-card>
       </div>
     </div>
-
     <!-- loading content loader -->
     <div v-if="contentLoading">
       <div class="loading-gif" align="center">
@@ -106,9 +101,6 @@ export default {
     ...mapState(["showDetails"]),
     ...mapGetters(["getCastDetaiils"]),
   },
-  // created() {
-  //   this.getShowDetailsbyId(this.id);
-  // },
   mounted() {
     if (this.showDetails) {
       this.getShowDetailsbyId(this.id);
@@ -144,10 +136,6 @@ export default {
 };
 </script>
 <style scoped>
-/* .show-details-container.col-6 {
-    float: right;
-  } */
-
 .show-cast-container.col-12 {
   float: left;
 }

@@ -4,11 +4,9 @@ import { BootstrapVue } from "bootstrap-vue";
 
 describe("In Footer Component", () => {
   let wrapper;
-
   beforeEach(() => {
     const localVue = createLocalVue();
     localVue.use(BootstrapVue);
-
     wrapper = shallowMount(Footer, {
       localVue,
     });
@@ -16,7 +14,6 @@ describe("In Footer Component", () => {
   afterEach(() => {
     wrapper.destroy();
   });
-
   it("is a vue instance", () => {
     expect(wrapper.isVueInstance).toBeTruthy();
   });

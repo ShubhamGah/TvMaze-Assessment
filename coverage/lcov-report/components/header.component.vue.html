@@ -22,9 +22,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.33% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/6</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
@@ -43,9 +43,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.33% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/6</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
@@ -123,11 +123,7 @@
 <a name='L65'></a><a href='#L65'>65</a>
 <a name='L66'></a><a href='#L66'>66</a>
 <a name='L67'></a><a href='#L67'>67</a>
-<a name='L68'></a><a href='#L68'>68</a>
-<a name='L69'></a><a href='#L69'>69</a>
-<a name='L70'></a><a href='#L70'>70</a>
-<a name='L71'></a><a href='#L71'>71</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L68'></a><a href='#L68'>68</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -169,7 +165,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -177,20 +173,18 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -209,8 +203,6 @@
             class="shrink mr-2 logo-img"
             contain
             src="../assets/tvm-header-logo.png"
-            transition="scale-transition"
-            width="100"
           /&gt;
         &lt;/router-link&gt;
         &lt;v-toolbar-title class="title"&gt;Tv Show&lt;/v-toolbar-title&gt;
@@ -225,8 +217,9 @@
       &gt;&lt;/v-text-field&gt;
       &lt;v-btn
         id="search-button"
+        class="search-button-btn"
         :disabled="!SearchString"
-        @click="getSearchResults"
+        @click="getSearchResults()"
         icon
       &gt;
         &lt;v-icon&gt;mdi-magnify&lt;/v-icon&gt;
@@ -246,12 +239,6 @@ export default {
   computed: {
     ...mapState(["searchedResult"]),
   },
-  // watch: {
-  //   SearchString() {
-  //     this.SearchString = this.SearchString.replace(/\s/g, " ");
-  //     this.getSearchResults();
-  //   },
-  // },
   mounted() {
     this.getSearchResults();
   },
@@ -260,12 +247,16 @@ export default {
 <span class="missing-if-branch" title="else path not taken" >E</span>      if (this.SearchString.trim() !== "") {
         this.$router.push("/show/" + this.SearchString);
       }
-<span class="cstat-no" title="statement not covered" >      this.SearchString = "";</span>
+      this.SearchString = "";
     },
   },
 };
 &lt;/script&gt;
-&lt;style scoped&gt;&lt;/style&gt;
+&lt;style scoped&gt;
+.logo-img {
+  width: 100px;
+}
+&lt;/style&gt;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -273,7 +264,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Sep 28 2021 22:06:45 GMT+0530 (India Standard Time)
+                at Wed Sep 29 2021 17:51:28 GMT+0530 (India Standard Time)
             </div>
         </div>
         <script src="..\prettify.js"></script>

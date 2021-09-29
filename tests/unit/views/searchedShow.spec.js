@@ -42,7 +42,6 @@ describe("Searched Show Component", () => {
   afterEach(() => {
     wrapper.destroy();
   });
-
   it("is a vue instance", () => {
     expect(wrapper.isVueInstance).toBeTruthy();
   });

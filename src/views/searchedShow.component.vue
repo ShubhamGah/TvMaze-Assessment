@@ -1,13 +1,14 @@
 <template>
-  <div class="searched-show-container m-4">
+  <div class="searched-show-container col-12">
+    <v-toolbar-title class="top-shows-title" align="center"> </v-toolbar-title>
     <!-- content loading loader -->
     <div v-if="contentLoading">
-      <div class="loading-gif" align="center">
+      <div class="loading-gif mt-14" align="center">
         <img class="loaderGIF" src="../assets/loader.gif" alt="image" />
       </div>
     </div>
     <!-- content error -->
-    <div class="m-5" v-if="searchedResult.length == 0">
+    <div class="error-message mt-14" v-if="searchedResult.length == 0">
       <div class="shows-error-message" align="center">
         <h4>Please search with other shows</h4>
       </div>
@@ -23,9 +24,13 @@
     <div class="search-shows mt-6 pb-9">
       <div v-if="searchedResult.length > 0">
         <!-- search shows title -->
+
         <v-toolbar-title class="top-shows-title mt-16" align="center"
-          >Searched Show</v-toolbar-title
-        >
+          >Showing results for:
+          <i>
+            <span class="searched-query">{{ searchQuery }}</span></i
+          >
+        </v-toolbar-title>
         <div
           class="search-items justify-space-around d-flex flex-wrap"
           color="dark"
@@ -73,6 +78,7 @@ export default {
       searchedString: this.$route.params.showData,
       contentLoading: false,
       contentError: false,
+      searchQuery: "",
     };
   },
   computed: {
@@ -94,7 +100,7 @@ export default {
     },
     async getSearchedShow() {
       this.searchedString = this.$route.params.showData;
-
+      this.searchQuery = this.searchedString;
       this.contentLoading = true;
       this.contentError = false;
       try {
@@ -113,9 +119,6 @@ export default {
 </script>
 
 <style scoped>
-img.loaderGIF {
-  margin-top: 6rem;
-}
 .search-items {
   justify-content: center !important;
 }

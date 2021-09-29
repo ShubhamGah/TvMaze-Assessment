@@ -27,17 +27,13 @@
                 id="top-images"
                 hover
                 elevation="20"
-                max-height="500px"
-                max-width="500px"
               >
                 <v-img
                   @click="getShowDetails(show.id)"
                   lazy-src="../assets/logo.png"
                   :src="show.image.medium"
-                  class="white--text align-end show-image"
+                  class="white--text align-end show-image-slider"
                   aspect-ratio="1"
-                  height="350"
-                  width="270"
                   :alt="show.name"
                 >
                 </v-img>
@@ -67,16 +63,12 @@
                 @click="getShowDetails(show.id)"
                 hover
                 elevation="20"
-                max-height="500px"
-                max-width="500px"
               >
                 <v-img
                   lazy-src="../assets/logo.png"
                   :src="show.image.medium"
-                  class="white--text align-end"
+                  class="white--text align-end show-image-slider"
                   aspect-ratio="1"
-                  height="350"
-                  width="270"
                   :alt="show.name"
                 >
                 </v-img>
@@ -113,16 +105,12 @@
                 @click="getShowDetails(show.id)"
                 hover
                 elevation="20"
-                max-height="500px"
-                max-width="500px"
               >
                 <v-img
                   lazy-src="../assets/logo.png"
                   :src="show.image.medium"
-                  class="white--text align-end"
+                  class="white--text align-end show-image-slider"
                   aspect-ratio="1"
-                  height="350"
-                  width="270"
                   :alt="show.name"
                 >
                 </v-img>
@@ -157,15 +145,7 @@ export default {
   },
   methods: {
     getShowDetails(id) {
-      this.contentLoading = true;
-      this.contentError = false;
-      try {
-        this.$router.push({ name: "ShowDetails", params: { id } });
-      } catch (error) {
-        this.contentError = true;
-        throw error;
-      }
-      this.contentLoading = false;
+      this.$router.push({ name: "ShowDetails", params: { id } });
     },
   },
 };
@@ -176,5 +156,9 @@ export default {
 }
 .show-name {
   padding: 1px;
+}
+.show-image-slider {
+  height: 350px;
+  width: 270px;
 }
 </style>

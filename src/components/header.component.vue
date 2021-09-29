@@ -11,8 +11,6 @@
             class="shrink mr-2 logo-img"
             contain
             src="../assets/tvm-header-logo.png"
-            transition="scale-transition"
-            width="100"
           />
         </router-link>
         <v-toolbar-title class="title">Tv Show</v-toolbar-title>
@@ -49,12 +47,6 @@ export default {
   computed: {
     ...mapState(["searchedResult"]),
   },
-  // watch: {
-  //   SearchString() {
-  //     this.SearchString = this.SearchString.replace(/\s/g, " ");
-  //     this.getSearchResults();
-  //   },
-  // },
   mounted() {
     this.getSearchResults();
   },
@@ -68,4 +60,8 @@ export default {
   },
 };
 </script>
-<style scoped></style>
+<style scoped>
+.logo-img {
+  width: 100px;
+}
+</style>

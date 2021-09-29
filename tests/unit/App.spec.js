@@ -7,7 +7,6 @@ describe("In App file", () => {
   let wrapper;
   let vuetify;
   const router = new VueRouter({ path: "/", name: "Home" });
-
   beforeEach(() => {
     const localVue = createLocalVue();
     localVue.use(VueRouter);
@@ -15,14 +14,13 @@ describe("In App file", () => {
     wrapper = shallowMount(app, {
       localVue,
       router,
+      stubs: ["v-app"],
       vuetify,
     });
   });
-
   afterEach(() => {
     wrapper.destroy();
   });
-
   it(" is a Vue instance", () => {
     expect(wrapper.isVueInstance).toBeTruthy();
   });
