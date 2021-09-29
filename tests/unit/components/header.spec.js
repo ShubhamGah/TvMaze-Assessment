@@ -67,21 +67,23 @@ describe("In Header Component", () => {
   beforeEach(() => {
     const localVue = createLocalVue();
     localVue.use(VueRouter);
-    localVue.use(Vuetify);
+    //localVue.use(Vuetify);
     localVue.use(Vuex);
     wrapper = shallowMount(Header, {
       localVue,
+      Vuetify,
       state,
       router,
       stubs: [
-        "v-app-bar",
-        "v-app-bar",
-        "v-spacer",
-        "v-text-field",
-        "v-btn",
-        "v-icon",
+        "b-navbar",
+        "b-navbar-toggle",
+        "b-collapse",
+        "b-navbar-nav",
+        "b-nav-form",
+        "b-form-input",
+        "b-button",
+        "b-nav-form",
         "v-img",
-        "v-toolbar-title",
       ],
       data() {
         return {

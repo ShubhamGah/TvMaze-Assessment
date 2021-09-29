@@ -1,38 +1,46 @@
 <template>
   <div class="header-container">
-    <!-- header main container -->
-    <v-app-bar app color="dark" name="app=header" dark>
-      <div class="d-flex align-center">
-        <router-link to="/">
-          <!-- tvm image -->
-          <v-img
-            name="tvm-image"
-            alt="Vuetify Logo"
-            class="shrink mr-2 logo-img"
-            contain
-            src="../assets/tvm-header-logo.png"
-          />
-        </router-link>
-        <v-toolbar-title class="title">Tv Show</v-toolbar-title>
-      </div>
-      <v-spacer></v-spacer>
-      <!-- search input field -->
-      <v-text-field
-        v-model="SearchString"
-        class="mt-7 search-input"
-        solo
-        label="Search Show"
-      ></v-text-field>
-      <v-btn
-        id="search-button"
-        class="search-button-btn"
-        :disabled="!SearchString"
-        @click="getSearchResults()"
-        icon
-      >
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
-    </v-app-bar>
+    <div>
+      <b-navbar toggleable="lg" type="light" variant="info">
+        <div class="d-flex align-center">
+          <router-link to="/">
+            <!-- tvm image -->
+            <v-img
+              name="tvm-image"
+              alt="Vuetify Logo"
+              class="shrink mr-2 logo-img"
+              contain
+              src="../assets/tvm-header-logo.png"
+            />
+          </router-link>
+        </div>
+
+        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+
+        <b-collapse id="nav-collapse" is-nav>
+          <!-- Right aligned nav items -->
+          <b-navbar-nav class="ml-auto">
+            <b-nav-form class="header-input-form">
+              <b-nav-form>
+                <b-form-input
+                  v-model="SearchString"
+                  class="mr-sm-2 search-input"
+                  placeholder="Search"
+                ></b-form-input>
+                <b-button
+                  :disabled="!SearchString"
+                  @click="getSearchResults()"
+                  variant="outline-success"
+                  class="my-2 my-sm-0 search-button-btn"
+                  type="submit"
+                  >Search</b-button
+                >
+              </b-nav-form>
+            </b-nav-form>
+          </b-navbar-nav>
+        </b-collapse>
+      </b-navbar>
+    </div>
   </div>
 </template>
 <script>
@@ -62,6 +70,13 @@ export default {
 </script>
 <style scoped>
 .logo-img {
-  width: 100px;
+  width: 8rem;
+  margin-left: 1rem;
+}
+.header-input-form .form-inline {
+  display: inline-flex !important;
+}
+.header-input-form {
+  margin: 10px;
 }
 </style>

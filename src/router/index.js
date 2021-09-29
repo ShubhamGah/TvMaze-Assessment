@@ -1,8 +1,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Dashboard from "../views/dashboard.component.vue";
-import SearchedShow from "../views/searchedShow.component.vue";
-import ShowDetails from "../views/showsDetails.component.vue";
+import Dashboard from "../views/dashboard.vue";
+import SearchedShow from "../views/searchedShow.vue";
+import ShowDetails from "../views/showsDetails.vue";
 Vue.use(VueRouter);
 
 const routes = [

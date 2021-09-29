@@ -1,10 +1,10 @@
 <template>
   <div class="show-details-container">
     <!-- show-image-container -->
-    <div v-if="showDetails" class="show-image-container mt-16 col-md-6">
-      <v-col class="show-image col-12">
+    <div class="show-image-container col-md-12">
+      <v-col class="show-image col-md-6">
         <v-img
-          class="white--text show-image"
+          class="white--text show-image col-md-12"
           :src="showDetails.image.original"
           aspect-ratio="1"
         >
@@ -12,11 +12,11 @@
       </v-col>
     </div>
     <!-- show-details-container -->
-    <div v-if="showDetails" class="show-details-container col-md-6 mt-16">
-      <div class="show-details mt-2">
-        <v-card class="pa-2 text-center">
-          <h2>{{ showDetails.name }}</h2>
-          <h4>{{ showDetails.language }} | {{ showDetails.type }}</h4>
+    <div class="show-details-container col-md-6">
+      <div class="show-details">
+        <v-card class="text-center">
+          <h3>{{ showDetails.name }}</h3>
+          <h5>{{ showDetails.language }} | {{ showDetails.type }}</h5>
           <h5>
             <span v-for="(gen, idx) in showDetails.genres" :key="idx">
               &nbsp;
@@ -28,18 +28,14 @@
           <h5 v-if="showDetails.rating">
             Rating : {{ showDetails.rating.average }}/10
           </h5>
+          <h3 class="text">
+            <u>Summary</u>
+          </h3>
+          <p class="pa-4" v-html="showDetails.summary"></p>
         </v-card>
       </div>
     </div>
-    <!-- show-summary-details -->
-    <div class="show-summary-container col-12">
-      <v-card class="pa-2">
-        <h3 class="text">
-          <u>Summary</u>
-        </h3>
-        <p class="pa-4" v-html="showDetails.summary"></p>
-      </v-card>
-    </div>
+
     <!-- show-cast-container -->
     <div
       class="show-cast-container col-12 pb-8"
@@ -139,17 +135,14 @@ export default {
 .show-cast-container.col-12 {
   float: left;
 }
-.show-summary-container.col-12 {
+
+.show-image {
   float: left;
 }
-.show-image.col-12 {
-  width: 30rem;
-  padding-left: 1.6rem;
-}
-.show-details-container.col-md-6 {
+.show-details-container {
   float: right;
 }
-.show-image-container.mt-16.col-md-6 {
+.show-image-container.mt-16 {
   display: inline-block;
 }
 .cast-images-card {

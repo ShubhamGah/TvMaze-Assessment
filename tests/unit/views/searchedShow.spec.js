@@ -3,12 +3,12 @@ import Vuetify from "vuetify";
 import VueRouter from "vue-router";
 import { routes } from "@/router/index";
 import Vuex from "vuex";
-import SearchedShow from "../../../src/views/searchedShow.component.vue";
+import SearchedShow from "../../../src/views/searchedShow.vue";
 
 describe("Searched Show Component", () => {
   let wrapper;
   let store;
-  let vuetify;
+  //let vuetify;
   let router = new VueRouter({ routes });
   const state = {
     searchedResult: SearchedShow,
@@ -20,17 +20,17 @@ describe("Searched Show Component", () => {
     const localVue = createLocalVue();
     localVue.use(VueRouter);
     localVue.use(Vuex);
-    vuetify = new Vuetify();
+    //vuetify = new Vuetify();
     store = new Vuex.Store({
       state,
       actions,
     });
     wrapper = shallowMount(SearchedShow, {
       localVue,
+      Vuetify,
       store,
       router,
-      stubs: ["v-toolbar-title"],
-      vuetify,
+      stubs: ["v-toolbar-title", "v-card"],
       data() {
         return {
           searchedString: this.$route.params.showData,
@@ -57,4 +57,8 @@ describe("Searched Show Component", () => {
   it("should check getShowDetails is defined", async () => {
     expect(wrapper.vm.getShowDetails).toBeDefined;
   });
+  // it("should check craeted method called", async () => {
+  //   const spy = jest.spyOn(wrapper.vm, "getSearchedShow");
+  //   expect(spy).toHaveBeenCalled();
+  // });getShowDetails
 });

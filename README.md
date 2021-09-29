@@ -98,6 +98,12 @@ bootstrap-vue@^2.21.2
 install: npm install bootstrap-vue --save
 ```
 
+### Vuetify
+
+```
+npm install vuetify  reference - https://vuetifyjs.com/en/getting-started/installation/
+```
+
 ### Build guidelines
 
 ```

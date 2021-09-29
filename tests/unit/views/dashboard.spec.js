@@ -1,7 +1,7 @@
 import { shallowMount, createLocalVue } from "@vue/test-utils";
 import VueRouter from "vue-router";
 import Vuex from "vuex";
-import Dashboard from "../../../src/views/dashboard.component.vue";
+import Dashboard from "../../../src/views/dashboard.vue";
 
 describe("In DashBoard Component", () => {
   let wrapper;

@@ -16,14 +16,18 @@
     <!-- top shows container -->
     <div class="top-show-container">
       <div v-if="getTopShows.length > 0">
-        <v-sheet tile color="dark" class="mx-auto mt-16">
+        <v-sheet tile color="dark" class="mx-auto">
           <v-toolbar-title class="top-shows-title" align="center"
-            >Top Five Show</v-toolbar-title
+            >Top Five</v-toolbar-title
           >
-          <v-slide-group class="pa-4 images-slide" center-active show-arrows>
-            <v-slide-item v-for="(show, idx) in getTopShows" :key="idx">
+          <v-slide-group class="images-slide" center-active show-arrows>
+            <v-slide-item
+              class="image-slide-items"
+              v-for="(show, idx) in getTopShows"
+              :key="idx"
+            >
               <v-card
-                class="m-1 zoom image-card"
+                class="m-1 image-card"
                 id="top-images"
                 hover
                 elevation="20"
@@ -54,9 +58,9 @@
       <div v-if="getComedyShows.length > 0">
         <v-sheet tile color="dark" class="mx-auto">
           <v-toolbar-title class="comedy-show-title" align="center"
-            >Comedy Show</v-toolbar-title
+            >Comedy</v-toolbar-title
           >
-          <v-slide-group class="pa-4" center-active show-arrows>
+          <v-slide-group class="images-slide" center-active show-arrows>
             <v-slide-item v-for="(show, idx) in getComedyShows" :key="idx">
               <v-card
                 class="m-1 zoom cardImage"
@@ -89,13 +93,9 @@
       <div v-if="getScienceFictionshows.length > 0">
         <v-sheet tile color="dark" class="mx-auto">
           <v-toolbar-title class="science-fictions-show-title" align="center"
-            >Science Fiction Show</v-toolbar-title
-          >
-          <v-slide-group
-            class="pa-1 card-slider-images pb-9"
-            center-active
-            show-arrows
-          >
+            >Science Fiction
+          </v-toolbar-title>
+          <v-slide-group class="images-slide pb-9" center-active show-arrows>
             <v-slide-item
               v-for="(show, idx) in getScienceFictionshows"
               :key="idx"
@@ -153,12 +153,13 @@ export default {
 <style scoped>
 .show-rating {
   padding: 1px;
+  padding-left: 4rem;
 }
 .show-name {
   padding: 1px;
+  padding-left: 4rem;
 }
 .show-image-slider {
-  height: 350px;
-  width: 270px;
+  width: 245px;
 }
 </style>

@@ -2,7 +2,7 @@ import { shallowMount, createLocalVue } from "@vue/test-utils";
 import Vuetify from "vuetify";
 import Vuex from "vuex";
 import ShowsTestData from "../testdata/showData";
-import ShowDetails from "../../../src/views/showsDetails.component.vue";
+import ShowDetails from "../../../src/views/showsDetails.vue";
 
 describe("In Shoe Details component", () => {
   let wrapper;
@@ -19,7 +19,7 @@ describe("In Shoe Details component", () => {
   };
   beforeEach(() => {
     const localVue = createLocalVue();
-    localVue.use(Vuetify);
+    //  localVue.use(Vuetify);
     localVue.use(Vuex);
     store = new Vuex.Store({
       state,
@@ -28,6 +28,7 @@ describe("In Shoe Details component", () => {
     });
     wrapper = shallowMount(ShowDetails, {
       localVue,
+      Vuetify,
       mocks: {
         $route: {
           params: {
@@ -57,5 +58,8 @@ describe("In Shoe Details component", () => {
   });
   it("should check getShowDetailsbyId is defined", async () => {
     expect(wrapper.vm.getShowDetailsbyId).toBeDefined();
+  });
+  it("should check getCastDetails is defined", async () => {
+    expect(wrapper.vm.getCastDetails).toBeDefined();
   });
 });

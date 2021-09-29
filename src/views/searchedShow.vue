@@ -21,11 +21,11 @@
     </div>
 
     <!-- searched shows container -->
-    <div class="search-shows mt-6 pb-9">
+    <div class="search-shows pb-9">
       <div v-if="searchedResult.length > 0">
         <!-- search shows title -->
 
-        <v-toolbar-title class="top-shows-title mt-16" align="center"
+        <v-toolbar-title class="top-shows-title" align="center"
           >Showing results for:
           <i>
             <span class="searched-query">{{ searchQuery }}</span></i
@@ -44,16 +44,13 @@
             @click="getShowDetails(item.show.id)"
             hover
             elevation="20"
-            max-height="500px"
-            max-width="500px"
           >
             <v-img
               lazy-src="../assets/logo.png"
-              class="white--text align-end"
+              class="white--text align-end show-image-slider"
               :src="item.show.image.medium"
               aspect-ratio="1"
-              height="350"
-              width="270"
+              width="245"
               :alt="item.name"
             >
             </v-img>
@@ -121,5 +118,9 @@ export default {
 <style scoped>
 .search-items {
   justify-content: center !important;
+}
+.show-image-slider {
+  width: 213px;
+  height: 244px;
 }
 </style>
