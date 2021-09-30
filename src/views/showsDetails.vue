@@ -62,7 +62,7 @@
             :alt="item.person.name"
           >
           </v-img>
-          <p class="text-capitalize">{{ item.person.name }}</p>
+          <p class="text-capitalize cast-name">{{ item.person.name }}</p>
         </v-card>
       </div>
     </div>
@@ -147,5 +147,8 @@ export default {
 }
 .cast-images-card {
   height: 14rem;
+}
+.cast-name {
+  padding-left: 3rem;
 }
 </style>

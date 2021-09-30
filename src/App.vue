@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <v-app id="app">
+  <div class="app-container">
+    <v-app>
       <Header />
       <router-view />
       <Footer />
