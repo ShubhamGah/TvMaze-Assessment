@@ -1,7 +1,7 @@
 <template>
   <div class="header-container">
     <div>
-      <b-navbar toggleable="lg" type="light" variant="info">
+      <b-navbar toggleable="lg" variant="dark">
         <div class="d-flex align-center">
           <router-link to="/">
             <!-- tvm image -->

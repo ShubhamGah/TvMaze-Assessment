@@ -123,4 +123,11 @@ export default {
   width: 213px;
   height: 244px;
 }
+.v-image__image.v-image__image--cover {
+  height: 244px !important;
+  width: 176px !important;
+}
+div#shows-card {
+  width: 177px;
+}
 </style>

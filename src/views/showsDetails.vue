@@ -1,8 +1,8 @@
 <template>
-  <div class="show-details-container">
+  <div class="show-details-main-container">
     <!-- show-image-container -->
     <div class="show-image-container col-md-12">
-      <v-col class="show-image col-md-6">
+      <v-col class="show-image col-md-6 pt-6">
         <v-img
           class="white--text show-image col-md-12"
           :src="showDetails.image.original"
@@ -32,40 +32,38 @@
             <u>Summary</u>
           </h3>
           <p class="pa-4" v-html="showDetails.summary"></p>
+          <!-- show-cast-container -->
+          <div
+            class="show-cast-container col-12 pb-8"
+            v-if="getCastDetaiils.length > 0"
+          >
+            <v-toolbar-title class="cast-title" align="center"
+              >Cast</v-toolbar-title
+            >
+            <hr />
+            <div class="search-items d-flex flex-wrap" color="dark">
+              <v-card
+                class="m-1 cast-images-card"
+                v-for="(item, idx) in getCastDetaiils"
+                :key="idx"
+                elevation="20"
+              >
+                <v-img
+                  lazy-src="../assets/logo.png"
+                  class="white--text align-end cast-persons-images"
+                  :src="item.person.image.medium"
+                  aspect-ratio="1"
+                  :alt="item.person.name"
+                  :title="item.person.name"
+                >
+                </v-img>
+              </v-card>
+            </div>
+          </div>
         </v-card>
       </div>
     </div>
 
-    <!-- show-cast-container -->
-    <div
-      class="show-cast-container col-12 pb-8"
-      v-if="getCastDetaiils.length > 0"
-    >
-      <v-toolbar-title class="cast-title" align="center">Cast</v-toolbar-title>
-      <hr />
-      <div
-        class="search-items justify-space-around d-flex flex-wrap"
-        color="dark"
-      >
-        <v-card
-          dard
-          class="m-1 cast-images-card"
-          v-for="(item, idx) in getCastDetaiils"
-          :key="idx"
-          elevation="20"
-        >
-          <v-img
-            lazy-src="../assets/logo.png"
-            class="white--text align-end cast-persons-images"
-            :src="item.person.image.medium"
-            aspect-ratio="1"
-            :alt="item.person.name"
-          >
-          </v-img>
-          <p class="text-capitalize cast-name">{{ item.person.name }}</p>
-        </v-card>
-      </div>
-    </div>
     <!-- loading content loader -->
     <div v-if="contentLoading">
       <div class="loading-gif" align="center">
@@ -132,6 +130,9 @@ export default {
 };
 </script>
 <style scoped>
+.show-details-main-container {
+  display: inline-block;
+}
 .show-cast-container.col-12 {
   float: left;
 }
@@ -146,7 +147,8 @@ export default {
   display: inline-block;
 }
 .cast-images-card {
-  height: 14rem;
+  height: 121px;
+  width: 121px;
 }
 .cast-name {
   padding-left: 3rem;
