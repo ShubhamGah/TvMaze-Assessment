@@ -54,7 +54,9 @@ describe("In Shoe Details component", () => {
     expect(wrapper.isVueInstance).toBeTruthy();
   });
   it("should render the correct html", () => {
-    expect(wrapper.html()).toContain('<div class="show-details-container">');
+    expect(wrapper.html()).toContain(
+      '<div class="show-details-main-container">'
+    );
   });
   it("should check getShowDetailsbyId is defined", async () => {
     expect(wrapper.vm.getShowDetailsbyId).toBeDefined();

@@ -113,7 +113,7 @@ describe("all shows", () => {
     expect(wrapper.isVueInstance).toBeTruthy();
   });
   it("should render the correct html", () => {
-    expect(wrapper.html()).toContain('<div class="shows-container">');
+    expect(wrapper.html()).toContain('<div class="shows-container pb-9">');
   });
 
   it("should check getShowDetails is defined", async () => {

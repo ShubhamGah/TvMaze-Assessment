@@ -20,11 +20,7 @@ export default {
   },
   methods: {
     async getAllShows() {
-      try {
-        await this.$store.dispatch("getAllShows");
-      } catch (error) {
-        throw error.message;
-      }
+      this.$store.dispatch("getAllShows");
     },
   },
 };

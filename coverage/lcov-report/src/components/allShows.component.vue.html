@@ -221,7 +221,57 @@
 <a name='L163'></a><a href='#L163'>163</a>
 <a name='L164'></a><a href='#L164'>164</a>
 <a name='L165'></a><a href='#L165'>165</a>
-<a name='L166'></a><a href='#L166'>166</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L166'></a><a href='#L166'>166</a>
+<a name='L167'></a><a href='#L167'>167</a>
+<a name='L168'></a><a href='#L168'>168</a>
+<a name='L169'></a><a href='#L169'>169</a>
+<a name='L170'></a><a href='#L170'>170</a>
+<a name='L171'></a><a href='#L171'>171</a>
+<a name='L172'></a><a href='#L172'>172</a>
+<a name='L173'></a><a href='#L173'>173</a>
+<a name='L174'></a><a href='#L174'>174</a>
+<a name='L175'></a><a href='#L175'>175</a>
+<a name='L176'></a><a href='#L176'>176</a>
+<a name='L177'></a><a href='#L177'>177</a>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a>
+<a name='L186'></a><a href='#L186'>186</a>
+<a name='L187'></a><a href='#L187'>187</a>
+<a name='L188'></a><a href='#L188'>188</a>
+<a name='L189'></a><a href='#L189'>189</a>
+<a name='L190'></a><a href='#L190'>190</a>
+<a name='L191'></a><a href='#L191'>191</a>
+<a name='L192'></a><a href='#L192'>192</a>
+<a name='L193'></a><a href='#L193'>193</a>
+<a name='L194'></a><a href='#L194'>194</a>
+<a name='L195'></a><a href='#L195'>195</a>
+<a name='L196'></a><a href='#L196'>196</a>
+<a name='L197'></a><a href='#L197'>197</a>
+<a name='L198'></a><a href='#L198'>198</a>
+<a name='L199'></a><a href='#L199'>199</a>
+<a name='L200'></a><a href='#L200'>200</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -386,8 +436,26 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
-  &lt;div class="shows-container"&gt;
+  &lt;div class="shows-container pb-9"&gt;
     &lt;!-- content loading loader --&gt;
     &lt;div v-if="contentLoading"&gt;
       &lt;div class="loading-gif" align="center"&gt;
@@ -401,119 +469,135 @@
         &lt;h4&gt;Please try again after some time&lt;/h4&gt;
       &lt;/div&gt;
     &lt;/div&gt;
+&nbsp;
     &lt;!-- top shows container --&gt;
-    &lt;div class="top-show-container"&gt;
-      &lt;div v-if="getTopShows.length &gt; 0"&gt;
-        &lt;v-sheet tile color="dark" class="mx-auto"&gt;
-          &lt;v-toolbar-title class="top-shows-title" align="center"
-            &gt;Top Five&lt;/v-toolbar-title
-          &gt;
-          &lt;v-slide-group class="images-slide" center-active show-arrows&gt;
-            &lt;v-slide-item
-              class="image-slide-items"
-              v-for="(show, idx) in getTopShows"
-              :key="idx"
-            &gt;
-              &lt;v-card
-                class="m-1 image-card"
-                id="top-images"
-                hover
-                elevation="20"
+    &lt;v-card elevation="20" class="top-shows-card shows-card v-show-card"&gt;
+      &lt;div class="top-show-container"&gt;
+        &lt;v-toolbar-title class="top-shows-title" align="center"
+          &gt;Top Five&lt;/v-toolbar-title
+        &gt;
+        &lt;div v-if="getTopShows.length &gt; 0"&gt;
+          &lt;v-sheet tile color="dark" class="mx-auto"&gt;
+            &lt;v-slide-group class="images-slide" center-active show-arrows&gt;
+              &lt;v-slide-item
+                class="image-slide-items"
+                v-for="(show, idx) in getTopShows"
+                :key="idx"
               &gt;
-                &lt;v-img
-                  @click="getShowDetails(show.id)"
-                  lazy-src="../assets/logo.png"
-                  :src="show.image.medium"
-                  class="white--text align-end show-image-slider"
-                  aspect-ratio="1"
-                  :alt="show.name"
+                &lt;v-card
+                  class="m-1 image-card shows-cards"
+                  id="top-images"
+                  hover
+                  elevation="20"
                 &gt;
-                &lt;/v-img&gt;
-                &lt;v-card-text class="show-name"
-                  &gt;&lt;b&gt;{{ show.name }}&lt;/b&gt;&lt;/v-card-text
-                &gt;
-                &lt;v-card-text class="show-rating"
-                  &gt;rating-{{ show.rating.average }} /10&lt;/v-card-text
-                &gt;
-              &lt;/v-card&gt;
-            &lt;/v-slide-item&gt;
-          &lt;/v-slide-group&gt;
-        &lt;/v-sheet&gt;
+                  &lt;v-img
+                    @click="getShowDetails(show.id)"
+                    lazy-src="../assets/logo.png"
+                    :src="show.image.medium"
+                    class="white--text align-end show-image-slider"
+                    aspect-ratio="1"
+                    :alt="show.name"
+                  &gt;
+                  &lt;/v-img&gt;
+                  &lt;v-card-text class="show-name"
+                    &gt;&lt;b&gt;{{ show.name }}&lt;/b&gt;&lt;/v-card-text
+                  &gt;
+                  &lt;v-card-text class="show-rating"
+                    &gt;rating-{{ show.rating.average }} /10&lt;/v-card-text
+                  &gt;
+                &lt;/v-card&gt;
+              &lt;/v-slide-item&gt;
+            &lt;/v-slide-group&gt;
+          &lt;/v-sheet&gt;
+        &lt;/div&gt;
       &lt;/div&gt;
-    &lt;/div&gt;
+    &lt;/v-card&gt;
     &lt;!-- comedy show container --&gt;
-    &lt;div class="comedy-show-container"&gt;
-      &lt;div v-if="getComedyShows.length &gt; 0"&gt;
-        &lt;v-sheet tile color="dark" class="mx-auto"&gt;
-          &lt;v-toolbar-title class="comedy-show-title" align="center"
-            &gt;Comedy&lt;/v-toolbar-title
-          &gt;
-          &lt;v-slide-group class="images-slide" center-active show-arrows&gt;
-            &lt;v-slide-item v-for="(show, idx) in getComedyShows" :key="idx"&gt;
-              &lt;v-card
-                class="m-1 zoom cardImage"
-                @click="getShowDetails(show.id)"
-                hover
-                elevation="20"
-              &gt;
-                &lt;v-img
-                  lazy-src="../assets/logo.png"
-                  :src="show.image.medium"
-                  class="white--text align-end show-image-slider"
-                  aspect-ratio="1"
-                  :alt="show.name"
-                &gt;
-                &lt;/v-img&gt;
-                &lt;v-card-text class="show-name"
-                  &gt;&lt;b&gt;{{ show.name }}&lt;/b&gt;&lt;/v-card-text
-                &gt;
-                &lt;v-card-text class="show-rating"&gt;
-                  rating-{{ show.rating.average }} /10&lt;/v-card-text
-                &gt;
-              &lt;/v-card&gt;
-            &lt;/v-slide-item&gt;
-          &lt;/v-slide-group&gt;
-        &lt;/v-sheet&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;!-- Science Fiction show container --&gt;
-    &lt;div class="science-fiction-show-container"&gt;
-      &lt;div v-if="getScienceFictionshows.length &gt; 0"&gt;
-        &lt;v-sheet tile color="dark" class="mx-auto"&gt;
-          &lt;v-toolbar-title class="science-fictions-show-title" align="center"
-            &gt;Science Fiction
-          &lt;/v-toolbar-title&gt;
-          &lt;v-slide-group class="images-slide pb-9" center-active show-arrows&gt;
-            &lt;v-slide-item
-              v-for="(show, idx) in getScienceFictionshows"
-              :key="idx"
+    &lt;v-card elevation="20" class="comedy-shows-card shows-card v-show-card"&gt;
+      &lt;div class="comedy-show-container"&gt;
+        &lt;div v-if="getComedyShows.length &gt; 0"&gt;
+          &lt;v-sheet tile color="dark" class="mx-auto"&gt;
+            &lt;v-toolbar-title class="comedy-show-title" align="center"
+              &gt;Comedy&lt;/v-toolbar-title
             &gt;
-              &lt;v-card
-                class="m-1 zoom"
-                @click="getShowDetails(show.id)"
-                hover
-                elevation="20"
-              &gt;
-                &lt;v-img
-                  lazy-src="../assets/logo.png"
+            &lt;v-slide-group class="images-slide" center-active show-arrows&gt;
+              &lt;v-slide-item v-for="(show, idx) in getComedyShows" :key="idx"&gt;
+                &lt;v-card
+                  class="m-1"
+                  @click="getShowDetails(show.id)"
+                  hover
+                  elevation="20"
+                &gt;
+                  &lt;v-img
+                    lazy-src="../assets/logo.png"
+                    :src="show.image.medium"
+                    class="white--text align-end show-image-slider"
+                    aspect-ratio="1"
+                    :alt="show.name"
+                  &gt;
+                  &lt;/v-img&gt;
+                  &lt;!-- &lt;img
                   :src="show.image.medium"
                   class="white--text align-end show-image-slider"
-                  aspect-ratio="1"
-                  :alt="show.name"
-                &gt;
-                &lt;/v-img&gt;
-                &lt;v-card-text class="show-name"
-                  &gt;&lt;b&gt;{{ show.name }}&lt;/b&gt;&lt;/v-card-text
-                &gt;
-                &lt;v-card-text class="show-rating"
-                  &gt;rating-{{ show.rating.average }} / 10&lt;/v-card-text
-                &gt;
-              &lt;/v-card&gt;
-            &lt;/v-slide-item&gt;
-          &lt;/v-slide-group&gt;
-        &lt;/v-sheet&gt;
+                  alt="img"
+                /&gt; --&gt;
+                  &lt;v-card-text class="show-name"
+                    &gt;&lt;b&gt;{{ show.name }}&lt;/b&gt;&lt;/v-card-text
+                  &gt;
+                  &lt;v-card-text class="show-rating"&gt;
+                    rating-{{ show.rating.average }} /10&lt;/v-card-text
+                  &gt;
+                &lt;/v-card&gt;
+              &lt;/v-slide-item&gt;
+            &lt;/v-slide-group&gt;
+          &lt;/v-sheet&gt;
+        &lt;/div&gt;
       &lt;/div&gt;
-    &lt;/div&gt;
+    &lt;/v-card&gt;
+&nbsp;
+    &lt;!-- Science Fiction show container --&gt;
+    &lt;v-card elevation="20" class="fiction-shows-card shows-card v-show-card"&gt;
+      &lt;div class="science-fiction-show-container"&gt;
+        &lt;div v-if="getScienceFictionshows.length &gt; 0"&gt;
+          &lt;v-sheet tile color="dark" class="mx-auto"&gt;
+            &lt;v-toolbar-title class="science-fictions-show-title" align="center"
+              &gt;Science Fiction
+            &lt;/v-toolbar-title&gt;
+            &lt;v-slide-group class="images-slide" center-active show-arrows&gt;
+              &lt;v-slide-item
+                v-for="(show, idx) in getScienceFictionshows"
+                :key="idx"
+              &gt;
+                &lt;v-card
+                  class="m-1"
+                  @click="getShowDetails(show.id)"
+                  hover
+                  elevation="20"
+                &gt;
+                  &lt;v-img
+                    lazy-src="../assets/logo.png"
+                    :src="show.image.medium"
+                    class="white--text align-end show-image-slider"
+                    aspect-ratio="1"
+                    :alt="show.name"
+                  &gt;
+                  &lt;/v-img&gt;
+                  &lt;div class="show-name"&gt;
+                    &lt;v-card-text class="show-name"
+                      &gt;&lt;b&gt;{{ show.name }}&lt;/b&gt;&lt;/v-card-text
+                    &gt;
+                    &lt;v-card-text class="show-rating"
+                      &gt;rating-{{ show.rating.average }} / 10&lt;/v-card-text
+                    &gt;
+                  &lt;/div&gt;
+                  &lt;div class="show-rating"&gt;&lt;/div&gt;
+                &lt;/v-card&gt;
+              &lt;/v-slide-item&gt;
+            &lt;/v-slide-group&gt;
+          &lt;/v-sheet&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/v-card&gt;
   &lt;/div&gt;
 &lt;/template&gt;
 &lt;script&gt;
@@ -539,16 +623,34 @@ export default {
 };
 &lt;/script&gt;
 &lt;style scoped&gt;
+.shows-container {
+  padding-top: 16px;
+}
 .show-rating {
   padding: 1px;
-  padding-left: 4rem;
+  align-items: center;
 }
 .show-name {
   padding: 1px;
-  padding-left: 4rem;
+  align-items: center;
 }
 .show-image-slider {
   width: 245px;
+}
+.show-image-slider .images-slide {
+  width: 176px !important;
+}
+.shows-card {
+  margin: 10px;
+}
+div#shows-cards {
+  width: 177px !important;
+}
+.v-image.v-responsive.show-image-slider {
+  height: 337px;
+}
+.v-show-card {
+  height: 460px;
 }
 &lt;/style&gt;
 &nbsp;</pre></td></tr></table></pre>
@@ -558,7 +660,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Sep 30 2021 09:31:56 GMT+0530 (India Standard Time)
+                at Tue Oct 05 2021 20:00:38 GMT+0530 (India Standard Time)
             </div>
         </div>
         <script src="..\..\prettify.js"></script>

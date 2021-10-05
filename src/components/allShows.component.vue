@@ -15,7 +15,7 @@
     </div>
 
     <!-- top shows container -->
-    <v-card elevation="20" class="top-shows-card shows-card">
+    <v-card elevation="20" class="top-shows-card shows-card v-show-card">
       <div class="top-show-container">
         <v-toolbar-title class="top-shows-title" align="center"
           >Top Five</v-toolbar-title
@@ -57,7 +57,7 @@
       </div>
     </v-card>
     <!-- comedy show container -->
-    <v-card elevation="20" class="comedy-shows-card shows-card">
+    <v-card elevation="20" class="comedy-shows-card shows-card v-show-card">
       <div class="comedy-show-container">
         <div v-if="getComedyShows.length > 0">
           <v-sheet tile color="dark" class="mx-auto">
@@ -67,7 +67,7 @@
             <v-slide-group class="images-slide" center-active show-arrows>
               <v-slide-item v-for="(show, idx) in getComedyShows" :key="idx">
                 <v-card
-                  class="m-1 zoom cardImage"
+                  class="m-1"
                   @click="getShowDetails(show.id)"
                   hover
                   elevation="20"
@@ -100,7 +100,7 @@
     </v-card>
 
     <!-- Science Fiction show container -->
-    <v-card elevation="20" class="fiction-shows-card shows-card">
+    <v-card elevation="20" class="fiction-shows-card shows-card v-show-card">
       <div class="science-fiction-show-container">
         <div v-if="getScienceFictionshows.length > 0">
           <v-sheet tile color="dark" class="mx-auto">
@@ -172,11 +172,11 @@ export default {
 }
 .show-rating {
   padding: 1px;
-  align-items: center !important;
+  align-items: center;
 }
 .show-name {
   padding: 1px;
-  align-items: center !important;
+  align-items: center;
 }
 .show-image-slider {
   width: 245px;
@@ -192,5 +192,8 @@ div#shows-cards {
 }
 .v-image.v-responsive.show-image-slider {
   height: 337px;
+}
+.v-show-card {
+  height: 460px;
 }
 </style>

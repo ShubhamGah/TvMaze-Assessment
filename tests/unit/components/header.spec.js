@@ -101,7 +101,11 @@ describe("In Header Component", () => {
   it("should render the correct markup", () => {
     expect(wrapper.html()).toContain('<div class="header-container">');
   });
-  it("should click on imge and call getSearchResults", async () => {
+  it("should check getSearchResults defined ", () => {
     expect(wrapper.vm.getSearchResults).toBeDefined();
+  });
+  it("should check getSearchResults called", async () => {
+    await wrapper.find(".search-button-btn").trigger("click");
+    expect(wrapper.vm.getSearchResults).toBeCalled;
   });
 });

@@ -14,12 +14,10 @@
             />
           </router-link>
         </div>
-
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-
         <b-collapse id="nav-collapse" is-nav>
           <!-- Right aligned nav items -->
-          <b-navbar-nav class="ml-auto">
+          <b-navbar-nav class="ml-auto m-2">
             <b-nav-form class="header-input-form">
               <b-nav-form>
                 <b-form-input
@@ -60,7 +58,7 @@ export default {
   },
   methods: {
     getSearchResults() {
-      if (this.SearchString.trim() !== "") {
+      if (this.SearchString) {
         this.$router.push("/show/" + this.SearchString);
       }
       this.SearchString = "";

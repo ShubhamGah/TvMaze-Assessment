@@ -30,7 +30,7 @@ describe("Searched Show Component", () => {
       Vuetify,
       store,
       router,
-      stubs: ["v-toolbar-title", "v-card"],
+      stubs: ["v-toolbar-title", "v-card", "v-img"],
       data() {
         return {
           searchedString: this.$route.params.showData,
@@ -57,8 +57,4 @@ describe("Searched Show Component", () => {
   it("should check getShowDetails is defined", async () => {
     expect(wrapper.vm.getShowDetails).toBeDefined;
   });
-  // it("should check craeted method called", async () => {
-  //   const spy = jest.spyOn(wrapper.vm, "getSearchedShow");
-  //   expect(spy).toHaveBeenCalled();
-  // });getShowDetails
 });

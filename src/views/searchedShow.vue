@@ -41,14 +41,14 @@
             class="m-1 dark show-item-card"
             v-for="(item, idx) in searchedResult"
             :key="idx"
-            @click="getShowDetails(item.show.id)"
             hover
             elevation="20"
           >
             <v-img
               lazy-src="../assets/logo.png"
+              @click="getShowDetails(item.show.id)"
               class="white--text align-end show-image-slider"
-              :src="item.show.image.medium"
+              :src="item.show.image ? item.show.image.medium : ''"
               aspect-ratio="1"
               width="245"
               :alt="item.name"
@@ -100,13 +100,8 @@ export default {
       this.searchQuery = this.searchedString;
       this.contentLoading = true;
       this.contentError = false;
-      try {
-        if (this.searchedString.trim() !== "") {
-          await this.$store.dispatch("getSearchedShows", this.searchedString);
-        }
-      } catch (error) {
-        this.contentError = true;
-        throw error;
+      if (this.searchedString) {
+        this.$store.dispatch("getSearchedShows", this.searchedString);
       }
       this.searchedString = "";
       this.contentLoading = false;
