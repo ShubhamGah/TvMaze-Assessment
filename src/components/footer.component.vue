@@ -15,7 +15,7 @@ export default {
 </script>
 <style scoped>
 .footer-container {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   height: 30px;
