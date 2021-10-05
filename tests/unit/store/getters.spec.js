@@ -18,10 +18,10 @@ describe("In Getters", () => {
   });
   it("should call getScienceFictionshows", () => {
     const result = getters.getScienceFictionshows(state);
-    expect(result).toBeTruthy();
+    expect(result).not.toBeNull();
   });
-  it("should call getScienceFictionshows", () => {
+  it("should call comedy shows", () => {
     const result = getters.getComedyShows(state);
-    expect(result).toBeTruthy();
+    expect(result).not.toBeNull();
   });
 });
