@@ -11,8 +11,7 @@
 <script>
 import Header from "../src/components/header.component.vue";
 import Footer from "../src/components/footer.component.vue";
-import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap-vue/dist/bootstrap-vue.css";
+
 export default {
   name: "App",
   components: {

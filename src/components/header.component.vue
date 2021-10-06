@@ -23,7 +23,7 @@
                 <b-form-input
                   v-model="SearchString"
                   class="mr-sm-2 search-input"
-                  placeholder="Search"
+                  placeholder="Search here"
                 ></b-form-input>
                 <b-button
                   :disabled="!SearchString"

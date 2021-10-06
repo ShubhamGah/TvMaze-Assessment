@@ -19,7 +19,7 @@ export default {
   bottom: 0;
   width: 100%;
   height: 30px;
-  background: #475b59;
+  background: #162725;
   color: #ffff;
 }
 </style>

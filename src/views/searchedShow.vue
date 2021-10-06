@@ -31,12 +31,8 @@
             <span class="searched-query">{{ searchQuery }}</span></i
           >
         </v-toolbar-title>
-        <div
-          class="search-items justify-space-around d-flex flex-wrap"
-          color="dark"
-        >
+        <div class="search-items justify-space-around d-flex flex-wrap">
           <v-card
-            dard
             id="shows-card"
             class="m-1 dark show-item-card"
             v-for="(item, idx) in searchedResult"
@@ -45,6 +41,7 @@
             elevation="20"
           >
             <v-img
+              :title="item.show.name"
               lazy-src="../assets/logo.png"
               @click="getShowDetails(item.show.id)"
               class="white--text align-end show-image-slider"

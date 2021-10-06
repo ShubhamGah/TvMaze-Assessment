@@ -15,7 +15,11 @@
     </div>
 
     <!-- top shows container -->
-    <v-card elevation="20" class="top-shows-card shows-card v-show-card">
+    <v-card
+      elevation="20"
+      dark
+      class="top-shows-card shows-card v-show-card pt-1"
+    >
       <div class="top-show-container">
         <v-toolbar-title class="top-shows-title" align="center"
           >Top Five</v-toolbar-title
@@ -29,7 +33,7 @@
                 :key="idx"
               >
                 <v-card
-                  class="m-1 image-card shows-cards"
+                  class="m-1 shows-cards"
                   id="top-images"
                   hover
                   elevation="20"
@@ -57,7 +61,11 @@
       </div>
     </v-card>
     <!-- comedy show container -->
-    <v-card elevation="20" class="comedy-shows-card shows-card v-show-card">
+    <v-card
+      elevation="20"
+      dark
+      class="comedy-shows-card shows-card v-show-card"
+    >
       <div class="comedy-show-container">
         <div v-if="getComedyShows.length > 0">
           <v-sheet tile color="dark" class="mx-auto">
@@ -100,7 +108,11 @@
     </v-card>
 
     <!-- Science Fiction show container -->
-    <v-card elevation="20" class="fiction-shows-card shows-card v-show-card">
+    <v-card
+      elevation="20"
+      dark
+      class="fiction-shows-card shows-card v-show-card"
+    >
       <div class="science-fiction-show-container">
         <div v-if="getScienceFictionshows.length > 0">
           <v-sheet tile color="dark" class="mx-auto">
@@ -167,9 +179,6 @@ export default {
 };
 </script>
 <style scoped>
-.shows-container {
-  padding-top: 16px;
-}
 .show-rating {
   padding: 1px;
   align-items: center;

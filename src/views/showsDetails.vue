@@ -7,7 +7,7 @@
           <v-col class="show-image col-md-6 pt-6">
             <v-img
               class="white--text show-details-image col-md-6"
-              :src="showDetails.image.medium"
+              :src="showDetails.image.original"
               aspect-ratio="1"
             >
             </v-img>
@@ -17,7 +17,7 @@
       <!-- show-short-details-container -->
       <div class="show-details-container col-md-6">
         <div class="show-details">
-          <v-card class="text-center">
+          <v-card dark class="text-center">
             <div class="show-details-name">
               <h3>
                 <i>{{ showDetails.name }}</i>
@@ -50,34 +50,32 @@
               </h3>
               <p class="pa-4" v-html="showDetails.summary"></p>
             </div>
-            <!-- show-cast-container -->
-            <div
-              class="show-cast-container col-12 pb-8"
-              v-if="getCastDetaiils.length > 0"
+          </v-card>
+        </div>
+      </div>
+      <!-- show-cast-container -->
+      <div
+        class="show-cast-container col-12 pb-8"
+        v-if="getCastDetaiils.length > 0"
+      >
+        <h3><i>Cast</i></h3>
+        <hr />
+        <div class="search-items d-flex flex-wrap">
+          <v-card
+            class="m-1 cast-images-card"
+            v-for="(item, idx) in getCastDetaiils"
+            :key="idx"
+            elevation="20"
+          >
+            <v-img
+              lazy-src="../assets/logo.png"
+              class="white--text align-end cast-persons-images"
+              :src="item.person.image.medium"
+              aspect-ratio="1"
+              :alt="item.person.name"
+              :title="item.person.name"
             >
-              <v-toolbar-title class="cast-title" align="center"
-                >Cast</v-toolbar-title
-              >
-              <hr />
-              <div class="search-items d-flex flex-wrap" color="dark">
-                <v-card
-                  class="m-1 cast-images-card"
-                  v-for="(item, idx) in getCastDetaiils"
-                  :key="idx"
-                  elevation="20"
-                >
-                  <v-img
-                    lazy-src="../assets/logo.png"
-                    class="white--text align-end cast-persons-images"
-                    :src="item.person.image.medium"
-                    aspect-ratio="1"
-                    :alt="item.person.name"
-                    :title="item.person.name"
-                  >
-                  </v-img>
-                </v-card>
-              </div>
-            </div>
+            </v-img>
           </v-card>
         </div>
       </div>
@@ -98,7 +96,7 @@
       </div>
     </div>
     <div class="show-data-not-found" v-else>
-      <h3>No data available</h3>
+      <h3>Invalid data or no data found</h3>
     </div>
   </div>
 </template>
@@ -152,7 +150,6 @@ export default {
 .show-cast-container.col-12 {
   float: left;
 }
-
 .show-image {
   float: left;
 }
@@ -165,6 +162,7 @@ export default {
 .cast-images-card {
   height: 121px;
   width: 121px;
+  cursor: pointer;
 }
 .v-image.show-details-image {
   width: 277px;
