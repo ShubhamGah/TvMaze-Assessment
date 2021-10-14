@@ -7,19 +7,19 @@ export default {
   },
 
   getComedyShows(state) {
-    let sampleDramaShows;
-    sampleDramaShows = state.allShows
+    let sampleComedyShows;
+    sampleComedyShows = state.allShows
       .filter((element) => element.genres.includes("Comedy"))
       .slice(0, 30);
-    return sampleDramaShows;
+    return sampleComedyShows;
   },
   // returns science friction shows
   getScienceFictionshows(state) {
-    let sampleSportsShows;
-    sampleSportsShows = state.allShows
+    let sampleScienceFictionShows;
+    sampleScienceFictionShows = state.allShows
       .filter((element) => element.genres.includes("Science-Fiction"))
       .slice(0, 30);
-    return sampleSportsShows;
+    return sampleScienceFictionShows;
   },
   //return cast details
   getCastDetaiils(state) {

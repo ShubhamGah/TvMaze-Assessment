@@ -7,7 +7,7 @@
             <!-- tvm image -->
             <v-img
               name="tvm-image"
-              alt="Vuetify Logo"
+              alt="tvm-logo"
               class="shrink mr-2 logo-img"
               contain
               src="../assets/tvm-header-logo.png"
@@ -58,7 +58,7 @@ export default {
   },
   methods: {
     getSearchResults() {
-      if (this.SearchString) {
+      if (this.SearchString != this.$route.params.showData) {
         this.$router.push("/show/" + this.SearchString);
       }
       this.SearchString = "";

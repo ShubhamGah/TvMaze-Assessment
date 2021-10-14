@@ -1,19 +1,5 @@
 <template>
   <div class="shows-container pb-9">
-    <!-- content loading loader -->
-    <div v-if="contentLoading">
-      <div class="loading-gif" align="center">
-        <img class="loaderGIF" src="/assets/loadingIcon.gif" />
-      </div>
-    </div>
-    <!-- content error -->
-    <div v-if="contentError">
-      <div class="shows-error-message" align="center">
-        <h3>Sorry some error occured!</h3>
-        <h4>Please try again after some time</h4>
-      </div>
-    </div>
-
     <!-- top shows container -->
     <v-card
       elevation="20"
@@ -161,13 +147,6 @@ import { mapGetters } from "vuex";
 export default {
   name: "AllShows",
   props: ["allShowsDetails"],
-  data() {
-    return {
-      contentLoading: false,
-      contentError: false,
-      rating: null,
-    };
-  },
   computed: {
     ...mapGetters(["getTopShows", "getComedyShows", "getScienceFictionshows"]),
   },

@@ -70,7 +70,7 @@
             <v-img
               lazy-src="../assets/logo.png"
               class="white--text align-end cast-persons-images"
-              :src="item.person.image.medium"
+              :src="item.person.image ? item.person.image.medium : ''"
               aspect-ratio="1"
               :alt="item.person.name"
               :title="item.person.name"
@@ -94,9 +94,6 @@
           <h4>Please try again after some time</h4>
         </div>
       </div>
-    </div>
-    <div class="show-data-not-found" v-else>
-      <h3>Invalid data or no data found</h3>
     </div>
   </div>
 </template>

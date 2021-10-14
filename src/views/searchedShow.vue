@@ -33,6 +33,7 @@
         </v-toolbar-title>
         <div class="search-items justify-space-around d-flex flex-wrap">
           <v-card
+            :title="item.show.name"
             id="shows-card"
             class="m-1 dark show-item-card"
             v-for="(item, idx) in searchedResult"
@@ -50,6 +51,9 @@
               width="245"
               :alt="item.name"
             >
+              <span v-if="!item.show.image" class="showname">
+                {{ item.show.name }}</span
+              >
             </v-img>
           </v-card>
         </div>
@@ -114,6 +118,9 @@ export default {
 .show-image-slider {
   width: 213px;
   height: 244px;
+}
+.showname {
+  color: black;
 }
 .v-image__image.v-image__image--cover {
   height: 244px !important;
